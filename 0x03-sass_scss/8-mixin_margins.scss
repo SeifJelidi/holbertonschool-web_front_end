@@ -1,0 +1,14 @@
+/* Margin left and right at 10px to body tags & Margin left and right at 15px to div tags by using mixn */
+
+@mixin Mymargin($size) {
+	margin-left: $size;
+	margin-right: $size;
+}
+
+body {
+	@include Mymargin(10px);
+}
+
+div {
+	@include Mymargin(15px);
+}

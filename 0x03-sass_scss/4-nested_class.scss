@@ -1,0 +1,9 @@
+/*Text color #3D3D3D to elements inside body tags & Text color #FF0000 to any elements of class using nested declaration */
+
+body {
+	color: #3D3D3D;
+
+	.red {
+		color: #FF0000;
+	}
+}
