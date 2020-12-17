@@ -1,0 +1,7 @@
+/*Sass file that creates H* tags, where * is the size of the font used.*/
+
+@for $sj from 1 to 6 {
+    h#{$s} {
+        font-size: 0px + $sj;
+    }
+}
