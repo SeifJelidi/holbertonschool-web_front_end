@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
+<title>0-index.html</title>
+</head>
+<body>
+<div id="form">
+<h2>Login to the website</h2>
+<input id="firstname" placeholder="Firstname">
+<input id="email" placeholder="Email">
+<button id="btn" onclick="setCookies()">Log me in</button>
+</div>
+<h1>Login to the website</h1>
+<input id="firstname" placeholder="Firstname">
+<input id="email" placeholder="Email">
+<button id="btn" onclick="setCookies()">Log me in</button>
+<h1>Cookies</h1>
+<button onclick="showCookies()" type="submit"> Show the cookies</button>
+<script type="text/javascript">
+function setCookies() {
+let i = document.getElementById('firstname');
+let j = document.getElementById('email');
+let dt = new Date();
+expire.setTime(d.getTime() + (10*24*60*60*1000));
+document.cookie = `firstname=${i.value};
+document.cookie = `email=${j.value};
+document.cookie = `expires=${dt};
+}
+function getCookie (name) {
+let q = document.cookie.split("; ");
+for (let x in q) {
+let k = q[x].split("=");
+if (k[0] === name) {
+return k[1]
+}
+}
+return "";
+}
+function showCookies() {
+let s = document.createElement('s');
+s.innerText = `Email: ${email} - Firstname: ${firstname}`;
+document.body.appendChild(s);
+}
+function showForm() {
+let welcome = document.getElementsByTagName('H1')[0];
+let s = document.getElementsByTagName('s');
+if (welcome) {
+console.log('welcome:');
+console.log(welcome);
+welcome.remove();
+}
+form[0].style.display = 'block';
+}
+function hideForm() {
+let s = document.getElementsByTagName('s');
+s[0].style.display = 'none';
+}
+function deleteCookiesAndShowForm(){
+Cookies.remove("firstname");
+Cookies.remove("email");
+Cookies.remove("expires");
+showForm();
+}
+
+ 
+function showWelcomeMessageOrForm() {
+if (!Cookies.get('firstname') || !Cookies.get('email')) {
+showForm();
+}
+else {
+let f = document.getElementsByTagName('f');
+let heading = document.createElement('H1');
+s[0].style.display = 'none';
+Welcome: ${getCookie('firstname')} 
+<a href="" onclick="deleteCookiesAndShowForm()" style="font-weight: normal; font-style: italic; margin-left: 10px; color: inherit; text-decoration:none;">(Logout)</a>
+`;
+document.body.append(heading);
+}            
+}
+showWelcomeMessageOrForm();
+</script>
+</body>
+</html>
